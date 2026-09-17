@@ -1914,3 +1914,175 @@ p {
     display: block;
 }
 
+
+
+
+/* =========================================================
+   GARDEN DESIGN & DECORATIVE FEATURES
+   ========================================================= */
+
+.garden-design {
+    background: #f7faf8;
+}
+
+.garden-design-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 45px;
+}
+
+
+/* FEATURE LIST */
+
+.garden-feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.garden-feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 16px 18px;
+
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 14px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.garden-feature:hover {
+    transform: translateX(6px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.garden-feature i {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 17px;
+}
+
+.garden-feature-list .btn {
+    margin-top: 12px;
+    align-self: flex-start;
+}
+
+
+/* PHOTO GALLERY */
+
+.garden-design-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 190px;
+    gap: 14px;
+}
+
+.garden-design-image {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.garden-design-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.45s ease;
+}
+
+.garden-design-image:hover img {
+    transform: scale(1.06);
+}
+
+
+/* MAIN FEATURE IMAGE */
+
+.garden-design-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+
+/* SUBTLE DARK OVERLAY */
+
+.garden-design-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.16),
+        transparent 55%
+    );
+
+    pointer-events: none;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .garden-design-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .garden-design-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 160px;
+        gap: 10px;
+    }
+
+    .garden-design-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .garden-feature {
+        padding: 14px;
+    }
+
+    .garden-feature-list .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
